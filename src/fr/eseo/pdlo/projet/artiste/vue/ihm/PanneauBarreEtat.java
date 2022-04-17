@@ -32,13 +32,13 @@ public class PanneauBarreEtat extends JPanel implements MouseMotionListener {
 	// AUTRES METHODES //
 	@Override
 	public void mouseDragged(MouseEvent event) {
-		System.out.println(event.getX());
+		//System.out.println(event.getX());
 		mettreAJourAffichage(new Coordonnees(event.getX(), event.getY()));
 	}
 
 	@Override
 	public void mouseMoved(MouseEvent event) {
-		System.out.println(event.getX());
+		//System.out.println(event.getX());
 		mettreAJourAffichage(new Coordonnees(event.getX(), event.getY()));
 	}
 	
