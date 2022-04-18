@@ -1,4 +1,4 @@
-package fr.eseo.pdlo.projet.artiste.vue.ihm;
+package fr.eseo.pdlo.projet.artiste.controleur.actions;
 
 import java.awt.BorderLayout;
 
@@ -6,8 +6,10 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 import fr.eseo.pdlo.projet.artiste.controleur.outils.OutilLigne;
+import fr.eseo.pdlo.projet.artiste.vue.ihm.PanneauBarreOutils;
+import fr.eseo.pdlo.projet.artiste.vue.ihm.PanneauDessin;
 
-public class PanneauBarreEtatTest {
+public class ActionEffacerTest {
 	public void testConstructeurParDefaut() {
 		JFrame fenetre = new JFrame("PanneauEtatTest");
 		
@@ -15,9 +17,9 @@ public class PanneauBarreEtatTest {
 		OutilLigne outilLigne = new OutilLigne();
 		panneau.associerOutil(outilLigne);
 		
-		PanneauBarreEtat panneauEtat = new PanneauBarreEtat(panneau);
+		PanneauBarreOutils panneauBarreOutils = new PanneauBarreOutils(panneau);
+		fenetre.add(panneauBarreOutils, BorderLayout.EAST);
 		
-		panneau.add(panneauEtat, BorderLayout.SOUTH);
 		fenetre.add(panneau);
 		
 		fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,7 +31,7 @@ public class PanneauBarreEtatTest {
 
 
 	// CONSTRUCTEUR //
-	public PanneauBarreEtatTest() {
+	public ActionEffacerTest() {
 		
 	}
 
@@ -37,7 +39,7 @@ public class PanneauBarreEtatTest {
 		SwingUtilities.invokeLater(new Runnable(){
 			@Override
 			public void run() {
-				PanneauBarreEtatTest test = new PanneauBarreEtatTest();
+				ActionEffacerTest test = new ActionEffacerTest();
 				test.testConstructeurParDefaut();
 			}
 		});

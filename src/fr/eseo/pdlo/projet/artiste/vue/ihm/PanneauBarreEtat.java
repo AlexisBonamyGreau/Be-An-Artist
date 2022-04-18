@@ -18,7 +18,6 @@ public class PanneauBarreEtat extends JPanel implements MouseMotionListener {
 	// CONSTRUCTEUR //
 	public PanneauBarreEtat(PanneauDessin panneauDessin) {
 		this.panneauDessin = panneauDessin;
-		this.addMouseMotionListener(panneauDessin.getOutilCourant());
 		
 		this.valeurX = new JLabel("x: "+0);
 		this.valeurY = new JLabel("y: "+0);
@@ -26,27 +25,24 @@ public class PanneauBarreEtat extends JPanel implements MouseMotionListener {
 		this.add(getValeurX());
 		this.add(getValeurY());
 		
+		this.panneauDessin.addMouseMotionListener(this);
 		this.panneauDessin.setLayout(new FlowLayout());
 	}
 
 	// AUTRES METHODES //
 	@Override
 	public void mouseDragged(MouseEvent event) {
-		//System.out.println(event.getX());
 		mettreAJourAffichage(new Coordonnees(event.getX(), event.getY()));
 	}
 
 	@Override
 	public void mouseMoved(MouseEvent event) {
-		//System.out.println(event.getX());
 		mettreAJourAffichage(new Coordonnees(event.getX(), event.getY()));
 	}
 	
 	private void mettreAJourAffichage(Coordonnees coords) {
-		setValeurX(new JLabel("x :"+coords.getAbscisse()));
-		setValeurY(new JLabel("y :"+coords.getOrdonnee()));
-		
-		this.repaint();
+		getValeurX().setText("x: "+ coords.getAbscisse());
+		getValeurY().setText("y: "+ coords.getOrdonnee());
 	}
 
 	

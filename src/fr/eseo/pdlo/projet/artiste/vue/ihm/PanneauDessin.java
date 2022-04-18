@@ -14,7 +14,7 @@ import fr.eseo.pdlo.projet.artiste.vue.formes.VueForme;
 
 public class PanneauDessin extends JPanel {
 	// VARIABLES D'INSTANCE //
-	private final List<VueForme> vueFormes  = new ArrayList<VueForme>();
+	private final List<VueForme> vueFormes = new ArrayList<VueForme>();
 	private Outil outilCourant;
 	
 	// CONSTANTES DE CLASSE //
@@ -28,7 +28,6 @@ public class PanneauDessin extends JPanel {
 	}
 	
 	public PanneauDessin(int largeur, int hauteur, Color fond) {
-		super();
 		this.setPreferredSize(new Dimension(largeur, hauteur));
 		this.setBackground(fond);
 	}
