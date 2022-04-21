@@ -53,7 +53,16 @@ public class Ellipse extends Forme {
     	petit_rayon = decimalFormat.format(Math.min(getHauteur(), getLargeur()));
     	aire = decimalFormat.format(aire());
 		
-		return ("[Ellipse] pos : "+getPosition().toString()+" petit rayon : "+petit_rayon+" grand rayon : "+grand_rayon+" périmétre : "+perimetre+" aire : "+aire);
+    	String chaine = "[Ellipse] pos : "+getPosition().toString()+" petit rayon : "+petit_rayon+" grand rayon : "+grand_rayon+" pÃ©rimÃ¨tre : "+perimetre+" aire : "+aire;
+    	
+    	if (locale == Locale.ENGLISH) {
+    		chaine += " couleur = R"+getCouleur().getRed()+",G"+getCouleur().getGreen()+",B"+getCouleur().getBlue();
+    	}
+    	else {
+    		chaine += " couleur = R"+getCouleur().getRed()+",V"+getCouleur().getGreen()+",B"+getCouleur().getBlue();
+    	}
+    	
+		return chaine;
 	}
 	
 	@Override

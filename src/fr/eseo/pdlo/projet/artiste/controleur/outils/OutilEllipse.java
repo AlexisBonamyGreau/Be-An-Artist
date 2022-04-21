@@ -12,6 +12,7 @@ public class OutilEllipse extends OutilForme {
 	protected VueForme creerVueForme() {
 		calculeCoordonnees();
 		Ellipse ellipse = new Ellipse(c1, c2.getAbscisse()-c1.getAbscisse(), c2.getOrdonnee()-c1.getOrdonnee());
+		ellipse.setCouleur(super.getPanneauDessin().getCouleurCourante());
 		return new VueEllipse(ellipse);
 	}
 

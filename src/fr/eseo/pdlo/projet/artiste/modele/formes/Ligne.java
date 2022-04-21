@@ -66,8 +66,17 @@ public class Ligne extends Forme {
     	
     	perimetre = decimalFormat.format(perimetre());
     	angle = decimalFormat.format(getAngle());
+    	
+    	String chaine = "[Ligne] c1 : "+getC1().toString()+" c2 : "+getC2().toString()+" longueur : "+perimetre+" angle : "+angle+"°";
+    	
+    	if (locale.getLanguage() == "en") {
+    		chaine += " couleur = R"+getCouleur().getRed()+",G"+getCouleur().getGreen()+",B"+getCouleur().getBlue();
+    	}
+    	else {
+    		chaine += " couleur = R"+getCouleur().getRed()+",V"+getCouleur().getGreen()+",B"+getCouleur().getBlue();
+    	}
 		
-		return ("[Ligne] c1 : "+getC1().toString()+" c2 : "+getC2().toString()+" longueur : "+perimetre+" angle : "+angle+"°");
+		return chaine;
 	}
 	
 	public double aire() {

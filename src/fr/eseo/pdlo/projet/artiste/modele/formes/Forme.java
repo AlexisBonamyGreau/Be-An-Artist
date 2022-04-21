@@ -1,17 +1,24 @@
 package fr.eseo.pdlo.projet.artiste.modele.formes;
 
+import java.awt.Color;
+
+import javax.swing.UIManager;
+
+import fr.eseo.pdlo.projet.artiste.modele.Coloriable;
 import fr.eseo.pdlo.projet.artiste.modele.Coordonnees;
 
-public abstract class Forme {
+public abstract class Forme implements Coloriable {
 	// CONSTANTES DE CLASSE //
 	public static final double LARGEUR_PAR_DEFAUT = 100;
 	public static final double HAUTEUR_PAR_DEFAUT = 100;
+	public static final Color COULEUR_PAR_DEFAUT = UIManager.getColor("Panel.foreground");
 	
 	
 	// VARIABLES D'INSTANCES //
 	private double largeur;
 	private double hauteur;
 	private Coordonnees position;
+	private Color couleur;
 	
 	
 	// CONSTRUCTEURS //
@@ -27,6 +34,7 @@ public abstract class Forme {
 		setPosition(position);
 		setLargeur(largeur);
 		setHauteur(hauteur);
+		setCouleur(COULEUR_PAR_DEFAUT);
 	}
 	
 	public Forme(Coordonnees position) {
@@ -88,10 +96,23 @@ public abstract class Forme {
 	}
 	
 	
+	// METHODES D'INTERFACE //
+	@Override
+	public Color getCouleur() {
+		return this.couleur;
+	}
+	
+	@Override
+	public void setCouleur(Color couleur) {
+		this.couleur = couleur;
+	}
+	
+	
 	// METHODES ABSTRAITES //
 	public abstract double aire();
 	
 	public abstract double perimetre();
 
 	public abstract boolean contient(Coordonnees coordonnees);
+
 }

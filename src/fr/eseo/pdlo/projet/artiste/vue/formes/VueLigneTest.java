@@ -19,6 +19,7 @@ public class VueLigneTest {
 		PanneauDessin panneau = new PanneauDessin(400, 240, Color.white);
 		
 		Ligne ligne = new Ligne();
+		ligne.setCouleur(Color.ORANGE);
 		panneau.ajouterVueForme(new VueLigne(ligne));
 		
 		fenetre.add(panneau);

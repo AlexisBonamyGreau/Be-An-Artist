@@ -20,6 +20,7 @@ public class VueCercleTest {
 		PanneauDessin panneau = new PanneauDessin(400, 240, Color.white);
 		
 		Cercle cercle = new Cercle(new Coordonnees(25, 100), 200);
+		cercle.setCouleur(Color.GREEN);
 		panneau.ajouterVueForme(new VueEllipse(cercle));
 		
 		fenetre.add(panneau);

@@ -27,6 +27,7 @@ public class OutilCercle extends OutilForme {
 			ordonnee = getDebut().getOrdonnee() - diametre;
 		
 		Cercle cercle = new Cercle(new Coordonnees(abscisse, ordonnee), diametre);
+		cercle.setCouleur(super.getPanneauDessin().getCouleurCourante());
 		
 		return new VueCercle(cercle);
 	}

@@ -20,6 +20,7 @@ public class VueEllipseTest {
 		PanneauDessin panneau = new PanneauDessin(400, 240, Color.white);
 		
 		Ellipse ellipse = new Ellipse(new Coordonnees(30, 21), 50, 100);
+		ellipse.setCouleur(Color.MAGENTA);
 		panneau.ajouterVueForme(new VueEllipse(ellipse));
 		
 		fenetre.add(panneau);
