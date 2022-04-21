@@ -10,8 +10,10 @@ import javax.swing.JToggleButton;
 
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionChoisirCouleur;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionChoisirForme;
+import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionChoisirModeRemplissage;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionEffacer;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionSelectionner;
+import fr.eseo.pdlo.projet.artiste.modele.Remplissage;
 
 public class PanneauBarreOutils extends JPanel {
 	// VARIABLES D'INSTANCE //
@@ -30,6 +32,7 @@ public class PanneauBarreOutils extends JPanel {
 	private void initComponents() {
 		Dimension dimension = new Dimension(200, 30);
 		ButtonGroup boutonChoixForme = new ButtonGroup();
+		ButtonGroup boutonChoixRemplissage = new ButtonGroup();
 		
 		JButton boutonEffacer = new JButton(new ActionEffacer(this.panneauDessin));
 		boutonEffacer.setMaximumSize(dimension);
@@ -62,7 +65,22 @@ public class PanneauBarreOutils extends JPanel {
 		boutonChoixForme.add(boutonSelect);
 		this.add(boutonSelect);
 		
-		JToggleButton boutonCouleur = new JToggleButton(new ActionChoisirCouleur(panneauDessin));
+		
+		JToggleButton boutonAucune = new JToggleButton(new ActionChoisirModeRemplissage(panneauDessin, Remplissage.AUCUNE));
+		boutonAucune.setMaximumSize(dimension);
+		boutonAucune.setName("Aucun");
+		boutonAucune.doClick();
+		boutonChoixRemplissage.add(boutonAucune);
+		this.add(boutonAucune);
+		
+		JToggleButton boutonUniforme = new JToggleButton(new ActionChoisirModeRemplissage(panneauDessin, Remplissage.UNIFORME));
+		boutonUniforme.setMaximumSize(dimension);
+		boutonUniforme.setName("Uniforme");
+		boutonChoixRemplissage.add(boutonUniforme);
+		this.add(boutonUniforme);
+		
+		
+		JButton boutonCouleur = new JButton(new ActionChoisirCouleur(panneauDessin));
 		boutonCouleur.setMaximumSize(dimension);
 		boutonCouleur.setName(ActionChoisirCouleur.NOM_ACTION);
 		boutonCouleur.setBackground(this.panneauDessin.getCouleurCourante());

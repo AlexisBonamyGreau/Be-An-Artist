@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 import fr.eseo.pdlo.projet.artiste.modele.Coordonnees;
+import fr.eseo.pdlo.projet.artiste.modele.Remplissage;
 import fr.eseo.pdlo.projet.artiste.modele.formes.Ellipse;
 import fr.eseo.pdlo.projet.artiste.vue.ihm.PanneauDessin;
 
@@ -20,6 +21,7 @@ public class VueEllipseTest {
 		PanneauDessin panneau = new PanneauDessin(400, 240, Color.white);
 		
 		Ellipse ellipse = new Ellipse(new Coordonnees(30, 21), 50, 100);
+		ellipse.setRemplissage(Remplissage.UNIFORME);
 		ellipse.setCouleur(Color.MAGENTA);
 		panneau.ajouterVueForme(new VueEllipse(ellipse));
 		

@@ -5,33 +5,51 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 import fr.eseo.pdlo.projet.artiste.modele.Coordonnees;
+import fr.eseo.pdlo.projet.artiste.modele.Remplissable;
+import fr.eseo.pdlo.projet.artiste.modele.Remplissage;
 
-public class Ellipse extends Forme {
+public class Ellipse extends Forme implements Remplissable {
+	Remplissage remplissage;
+	
 	// CONSTRUCTEURS //
 	public Ellipse() {
 		super();
+		setRemplissage(Remplissage.AUCUNE);
 	}
 	
 	public Ellipse(double largeur, double hauteur) {
 		super(largeur, hauteur);
+		setRemplissage(Remplissage.AUCUNE);
 	}
 	
 	public Ellipse(Coordonnees position) {
 		super(position);
+		setRemplissage(Remplissage.AUCUNE);
 	}
 	
 	public Ellipse(Coordonnees position, double largeur, double hauteur) {
 		super(position, largeur, hauteur);
+		setRemplissage(Remplissage.AUCUNE);
 	}
 	
 	
 	// MUTATEURS //
 	public void setLargeur(double largeur) {
-		super.setLargeur(largeur);
+		if (largeur < 0) {
+			throw new IllegalArgumentException("Largeur négative");
+		}
+		else {
+			super.setLargeur(largeur);
+		}
 	}
 	
 	public void setHauteur(double hauteur) {
-		super.setHauteur(hauteur);
+		if (hauteur < 0) {
+			throw new IllegalArgumentException("Hauteur négative");
+		}
+		else {
+			super.setHauteur(hauteur);
+		}
 	}
 
 	
@@ -49,11 +67,11 @@ public class Ellipse extends Forme {
     	decimalFormat.applyPattern(Coordonnees.PATTERN);
     	
     	perimetre = decimalFormat.format(perimetre());
-    	grand_rayon = decimalFormat.format(Math.max(getHauteur(), getLargeur()));
-    	petit_rayon = decimalFormat.format(Math.min(getHauteur(), getLargeur()));
+    	grand_rayon = decimalFormat.format(Math.max(getHauteur()/2, getLargeur()/2));
+    	petit_rayon = decimalFormat.format(Math.min(getHauteur()/2, getLargeur()/2));
     	aire = decimalFormat.format(aire());
 		
-    	String chaine = "[Ellipse] pos : "+getPosition().toString()+" petit rayon : "+petit_rayon+" grand rayon : "+grand_rayon+" périmètre : "+perimetre+" aire : "+aire;
+    	String chaine = "[Ellipse "+remplissage.getMode()+"] : pos "+getPosition().toString()+" petit rayon "+petit_rayon+" grand rayon "+grand_rayon+" périmètre : "+perimetre+" aire : "+aire;
     	
     	if (locale == Locale.ENGLISH) {
     		chaine += " couleur = R"+getCouleur().getRed()+",G"+getCouleur().getGreen()+",B"+getCouleur().getBlue();
@@ -67,13 +85,13 @@ public class Ellipse extends Forme {
 	
 	@Override
 	public double aire() {
-		return (Math.PI*getLargeur()*getHauteur());
+		return (Math.PI*getLargeur()/2*getHauteur()/2);
 	}
 
 	@Override
 	public double perimetre() {
-		double a = Math.min(getLargeur(), getHauteur());
-		double b = Math.max(getLargeur(), getHauteur());
+		double a = Math.min(getLargeur()/2, getHauteur()/2);
+		double b = Math.max(getLargeur()/2, getHauteur()/2);
 		double h = Math.pow((a-b)/(a+b),2);
 		return (Math.PI * (a+b) * (1+(3*h)/(10+Math.sqrt(4-3*h))));
 	}
@@ -89,5 +107,15 @@ public class Ellipse extends Forme {
 		
 		boolean back = (Math.pow(x-h, 2)/Math.pow(a, 2)) + Math.pow(y-k, 2)/Math.pow(b, 2) < 1;
 		return back;
+	}
+
+	@Override
+	public Remplissage getRemplissage() {
+		return this.remplissage;
+	}
+
+	@Override
+	public void setRemplissage(Remplissage modeRemplissage) {
+		this.remplissage = modeRemplissage;
 	}
 }

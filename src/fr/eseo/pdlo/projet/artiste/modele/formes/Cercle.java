@@ -39,7 +39,7 @@ public class Cercle extends Ellipse {
 	
 	// AUTRES METHODES //
 	public double perimetre() {
-		return 2*Math.PI*getLargeur();
+		return 2*Math.PI*getLargeur()/2;
 	}
 	
 	public double aire() {
@@ -58,10 +58,10 @@ public class Cercle extends Ellipse {
     	decimalFormat.applyPattern(Coordonnees.PATTERN);
     	
     	perimetre = decimalFormat.format(perimetre());
-    	rayon = decimalFormat.format(getHauteur());
+    	rayon = decimalFormat.format(getHauteur()/2);
     	aire = decimalFormat.format(aire());
 		
-    	String chaine = "[Cercle] pos : "+getPosition().toString()+" rayon : "+rayon+" périmètre : "+perimetre+" aire : "+aire;
+    	String chaine = "[Cercle "+remplissage.getMode()+"] : pos "+getPosition().toString()+" rayon "+rayon+" périmètre : "+perimetre+" aire : "+aire;
     	
     	if (locale == Locale.ENGLISH) {
     		chaine += " couleur = R"+getCouleur().getRed()+",G"+getCouleur().getGreen()+",B"+getCouleur().getBlue();

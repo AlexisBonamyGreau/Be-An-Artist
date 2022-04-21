@@ -13,6 +13,7 @@ public class OutilEllipse extends OutilForme {
 		calculeCoordonnees();
 		Ellipse ellipse = new Ellipse(c1, c2.getAbscisse()-c1.getAbscisse(), c2.getOrdonnee()-c1.getOrdonnee());
 		ellipse.setCouleur(super.getPanneauDessin().getCouleurCourante());
+		ellipse.setRemplissage(super.getPanneauDessin().getModeRemplissageCourant());
 		return new VueEllipse(ellipse);
 	}
 
