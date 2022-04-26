@@ -13,6 +13,7 @@ import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionChoisirCouleur;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionChoisirForme;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionChoisirModeRemplissage;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionEffacer;
+import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionExporter;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionSelectionner;
 import fr.eseo.pdlo.projet.artiste.modele.Remplissage;
 
@@ -53,6 +54,12 @@ public class PanneauBarreOutils extends JPanel {
 		boutonSelect.setName(ActionSelectionner.NOM_ACTION);
 		boutonChoixForme.add(boutonSelect);
 		this.add(boutonSelect);
+		
+		JButton boutonExport = new JButton(new ActionExporter(panneauDessin));
+		boutonExport.setMaximumSize(dimension);
+		boutonExport.setName(ActionExporter.NOM_ACTION);
+		boutonChoixForme.add(boutonExport);
+		this.add(boutonExport);
 		
 		
 		

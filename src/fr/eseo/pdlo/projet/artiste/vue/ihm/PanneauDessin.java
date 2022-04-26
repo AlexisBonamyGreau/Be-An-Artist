@@ -4,9 +4,12 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 import fr.eseo.pdlo.projet.artiste.controleur.outils.Outil;
@@ -102,5 +105,16 @@ public class PanneauDessin extends JPanel {
         for (VueForme vueForme : this.vueFormes)
             vueForme.affiche(g2D);
 		g2D.dispose();
+	}
+	
+	public void saveImage(String name,String type) {
+		BufferedImage image = new BufferedImage(LARGEUR_PAR_DEFAUT, HAUTEUR_PAR_DEFAUT, BufferedImage.TYPE_INT_RGB);
+		Graphics2D g2 = image.createGraphics();
+		paint(g2);
+		try{
+			ImageIO.write(image, type, new File(name+"."+type));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
