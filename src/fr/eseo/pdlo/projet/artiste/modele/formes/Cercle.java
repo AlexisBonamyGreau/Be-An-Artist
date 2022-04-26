@@ -46,6 +46,7 @@ public class Cercle extends Ellipse {
 		return super.aire();
 	}
 	
+	
 	public String toString() {
 		String perimetre;
 		String rayon;

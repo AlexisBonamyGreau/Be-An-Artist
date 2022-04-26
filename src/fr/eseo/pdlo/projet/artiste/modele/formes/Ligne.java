@@ -69,7 +69,7 @@ public class Ligne extends Forme {
     	
     	String chaine = "[Ligne] c1 : "+getC1().toString()+" c2 : "+getC2().toString()+" longueur : "+perimetre+" angle : "+angle+"°";
     	
-    	if (locale.getLanguage() == "en") {
+    	if (Locale.getDefault() == Locale.ENGLISH) {
     		chaine += " couleur = R"+getCouleur().getRed()+",G"+getCouleur().getGreen()+",B"+getCouleur().getBlue();
     	}
     	else {

@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JToggleButton;
 
@@ -34,12 +35,24 @@ public class PanneauBarreOutils extends JPanel {
 		ButtonGroup boutonChoixForme = new ButtonGroup();
 		ButtonGroup boutonChoixRemplissage = new ButtonGroup();
 		
+		JLabel texteActions = new JLabel("Actions :");
+		texteActions.setMaximumSize(dimension);
+		this.add(texteActions);
+		
 		JButton boutonEffacer = new JButton(new ActionEffacer(this.panneauDessin));
 		boutonEffacer.setMaximumSize(dimension);
 		boutonEffacer.setName(ActionEffacer.NOM_ACTION);
 		this.add(boutonEffacer);
 		
+		JToggleButton boutonSelect = new JToggleButton(new ActionSelectionner(panneauDessin));
+		boutonSelect.setMaximumSize(dimension);
+		boutonSelect.setName(ActionSelectionner.NOM_ACTION);
+		boutonChoixForme.add(boutonSelect);
+		this.add(boutonSelect);
 		
+		JLabel texteFormes = new JLabel("Forme :");
+		texteFormes.setMaximumSize(dimension);
+		this.add(texteFormes);
 		
 		JToggleButton boutonLigne = new JToggleButton(new ActionChoisirForme(panneauDessin, this, ActionChoisirForme.NOM_ACTION_LIGNE));
 		boutonLigne.setMaximumSize(dimension);
@@ -59,26 +72,24 @@ public class PanneauBarreOutils extends JPanel {
 		boutonChoixForme.add(boutonCercle);
 		this.add(boutonCercle);
 		
-		JToggleButton boutonSelect = new JToggleButton(new ActionSelectionner(panneauDessin));
-		boutonSelect.setMaximumSize(dimension);
-		boutonSelect.setName(ActionSelectionner.NOM_ACTION);
-		boutonChoixForme.add(boutonSelect);
-		this.add(boutonSelect);
-		
+		JLabel texteRemplissage = new JLabel("Remplissage :");
+		texteRemplissage.setMaximumSize(dimension);
+		this.add(texteRemplissage);
 		
 		JToggleButton boutonAucune = new JToggleButton(new ActionChoisirModeRemplissage(panneauDessin, Remplissage.AUCUNE));
 		boutonAucune.setMaximumSize(dimension);
-		boutonAucune.setName("Aucun");
 		boutonAucune.doClick();
 		boutonChoixRemplissage.add(boutonAucune);
 		this.add(boutonAucune);
 		
 		JToggleButton boutonUniforme = new JToggleButton(new ActionChoisirModeRemplissage(panneauDessin, Remplissage.UNIFORME));
 		boutonUniforme.setMaximumSize(dimension);
-		boutonUniforme.setName("Uniforme");
 		boutonChoixRemplissage.add(boutonUniforme);
 		this.add(boutonUniforme);
 		
+		JLabel texteCouleur = new JLabel("Remplissage :");
+		texteCouleur.setMaximumSize(dimension);
+		this.add(texteCouleur);
 		
 		JButton boutonCouleur = new JButton(new ActionChoisirCouleur(panneauDessin));
 		boutonCouleur.setMaximumSize(dimension);

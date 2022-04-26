@@ -1,7 +1,7 @@
 package fr.eseo.pdlo.projet.artiste.modele;
 
 public enum Remplissage {
-	AUCUNE("aucune"), UNIFORME("uniforme");
+	AUCUNE("Aucun"), UNIFORME("Uniforme");
 	
 	private String mode;
 	private Remplissage(String mode) {

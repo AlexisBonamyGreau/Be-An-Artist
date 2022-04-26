@@ -22,8 +22,8 @@ public class PanneauDessin extends JPanel {
 	private Remplissage remplissageCourant;
 	
 	// CONSTANTES DE CLASSE //
-	public static final int LARGEUR_PAR_DEFAUT = 640;
-	public static final int HAUTEUR_PAR_DEFAUT = 480;
+	public static final int LARGEUR_PAR_DEFAUT = 1080;
+	public static final int HAUTEUR_PAR_DEFAUT = 720;
 	public static final Color COULEUR_FOND_PAR_DEFAUT = Color.WHITE;
 	
 	// CONSTRUCTEURS //

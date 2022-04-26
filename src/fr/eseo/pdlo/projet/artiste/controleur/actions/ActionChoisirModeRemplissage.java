@@ -21,11 +21,11 @@ public class ActionChoisirModeRemplissage extends AbstractAction {
 	public void actionPerformed(ActionEvent event) {
 		switch (event.getActionCommand()) {
 		
-		case "aucune" :
+		case "Aucun" :
 			panneauDessin.setModeRemplissageCourant(Remplissage.AUCUNE);
 			break;
 		
-		case "uniforme" :
+		case "Uniforme" :
 			panneauDessin.setModeRemplissageCourant(Remplissage.UNIFORME);
 			break;
 			
