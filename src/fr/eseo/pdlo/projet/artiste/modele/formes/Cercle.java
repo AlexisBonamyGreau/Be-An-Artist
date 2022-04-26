@@ -62,13 +62,16 @@ public class Cercle extends Ellipse {
     	rayon = decimalFormat.format(getHauteur()/2);
     	aire = decimalFormat.format(aire());
 		
-    	String chaine = "[Cercle "+remplissage.getMode()+"] : pos "+getPosition().toString()+" rayon "+rayon+" périmètre : "+perimetre+" aire : "+aire;
+    	String chaine = "[Cercle "+remplissage.getMode()+"] : pos "
+    	+getPosition().toString()+" rayon "+rayon+" périmètre : "+perimetre+" aire : "+aire;
     	
     	if (locale == Locale.ENGLISH) {
-    		chaine += " couleur = R"+getCouleur().getRed()+",G"+getCouleur().getGreen()+",B"+getCouleur().getBlue();
+    		chaine += " couleur = R"+getCouleur().getRed()
+    				+",G"+getCouleur().getGreen()+",B"+getCouleur().getBlue();
     	}
     	else {
-    		chaine += " couleur = R"+getCouleur().getRed()+",V"+getCouleur().getGreen()+",B"+getCouleur().getBlue();
+    		chaine += " couleur = R"+getCouleur().getRed()
+    				+",V"+getCouleur().getGreen()+",B"+getCouleur().getBlue();
     	}
     	
 		return chaine;

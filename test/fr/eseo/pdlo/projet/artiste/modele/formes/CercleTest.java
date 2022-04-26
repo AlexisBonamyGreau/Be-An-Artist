@@ -1,6 +1,6 @@
 package fr.eseo.pdlo.projet.artiste.modele.formes;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Locale;
 

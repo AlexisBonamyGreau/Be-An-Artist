@@ -14,17 +14,17 @@ public class EtreUnArtiste {
 	public void ConstructeurParDefaut() {
 		JFrame fenetre = new JFrame("Etre Un Artiste");
 		
-		PanneauDessin panneau = new PanneauDessin();
+		PanneauDessin panneauDessin = new PanneauDessin();
 		OutilLigne outilLigne = new OutilLigne();
-		panneau.associerOutil(outilLigne);
+		panneauDessin.associerOutil(outilLigne);
 		
-		PanneauBarreOutils panneauOutils = new PanneauBarreOutils(panneau);
-		fenetre.add(panneauOutils, BorderLayout.EAST);
+		PanneauBarreOutils panneauBarreOutils = new PanneauBarreOutils(panneauDessin);
+		fenetre.add(panneauBarreOutils, BorderLayout.EAST);
 		
-		PanneauBarreEtat panneauEtat = new PanneauBarreEtat(panneau);
-		fenetre.add(panneauEtat, BorderLayout.SOUTH);
+		PanneauBarreEtat panneauBarreEtat = new PanneauBarreEtat(panneauDessin);
+		fenetre.add(panneauBarreEtat, BorderLayout.SOUTH);
 		
-		fenetre.add(panneau);
+		fenetre.add(panneauDessin);
 		
 		fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		fenetre.setSize(PanneauDessin.LARGEUR_PAR_DEFAUT, PanneauDessin.HAUTEUR_PAR_DEFAUT);
@@ -34,33 +34,30 @@ public class EtreUnArtiste {
 	}
 	
 	
-	public void ConstructeurCustom(String titre, String str_largeur, String str_hauteur) {
-		
-		//int largeur = Integer.parseInt(str_largeur);
-		//int hauteur = Integer.parseInt(str_hauteur);
+	public void ConstructeurCustom(String titre, String strLargeur, String strHauteur) {
 		
 		JFrame fenetre = new JFrame(titre);
 		
-		PanneauDessin panneau = new PanneauDessin();
+		PanneauDessin panneauDessin = new PanneauDessin();
 		OutilLigne outilLigne = new OutilLigne();
-		panneau.associerOutil(outilLigne);
+		panneauDessin.associerOutil(outilLigne);
 		
-		PanneauBarreOutils panneauOutils = new PanneauBarreOutils(panneau);
-		fenetre.add(panneauOutils, BorderLayout.EAST);
+		PanneauBarreOutils panneauBarreOutils = new PanneauBarreOutils(panneauDessin);
+		fenetre.add(panneauBarreOutils, BorderLayout.EAST);
 		
-		PanneauBarreEtat panneauEtat = new PanneauBarreEtat(panneau);
-		fenetre.add(panneauEtat, BorderLayout.SOUTH);
+		PanneauBarreEtat panneauBarreEtat = new PanneauBarreEtat(panneauDessin);
+		fenetre.add(panneauBarreEtat, BorderLayout.SOUTH);
 		
-		fenetre.add(panneau);
+		fenetre.add(panneauDessin);
 		
 		int largeur = PanneauDessin.LARGEUR_PAR_DEFAUT;
-		if (isANumber(str_largeur)) {
-			largeur = Integer.parseInt(str_largeur);
+		if (isANumber(strLargeur)) {
+			largeur = Integer.parseInt(strLargeur);
 		}
 		
 		int hauteur = PanneauDessin.HAUTEUR_PAR_DEFAUT;
-		if (isANumber(str_hauteur)) {
-			hauteur = Integer.parseInt(str_hauteur);
+		if (isANumber(strHauteur)) {
+			hauteur = Integer.parseInt(strHauteur);
 		}
 
 		fenetre.setSize(largeur, hauteur);

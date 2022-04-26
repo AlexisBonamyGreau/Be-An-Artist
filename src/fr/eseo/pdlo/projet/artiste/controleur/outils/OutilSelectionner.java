@@ -19,6 +19,7 @@ public class OutilSelectionner extends Outil {
 				formeSelectionnee = vueForme.getForme();
 			}
 		}
-		JOptionPane.showConfirmDialog(super.getPanneauDessin(), (Object) formeSelectionnee.toString(), ActionSelectionner.NOM_ACTION, JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showConfirmDialog(super.getPanneauDessin(), (Object) formeSelectionnee.toString()
+				, ActionSelectionner.NOM_ACTION, JOptionPane.INFORMATION_MESSAGE);
 	}
 }

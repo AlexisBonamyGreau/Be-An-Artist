@@ -63,7 +63,8 @@ public class Coordonnees {
     }
     
     public double distanceVers(Coordonnees coord){
-        return Math.sqrt((coord.abscisse - this.abscisse)*(coord.abscisse - this.abscisse) + (coord.ordonnee - this.ordonnee)*(coord.ordonnee - this.ordonnee));
+        return Math.sqrt((coord.abscisse - this.abscisse)*(coord.abscisse - this.abscisse) 
+        		+ (coord.ordonnee - this.ordonnee)*(coord.ordonnee - this.ordonnee));
     }
     
     public String toString() {

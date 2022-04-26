@@ -35,6 +35,10 @@ public class PanneauBarreOutils extends JPanel {
 		ButtonGroup boutonChoixForme = new ButtonGroup();
 		ButtonGroup boutonChoixRemplissage = new ButtonGroup();
 		
+		
+		
+		// BOUTONS D'ACTION //
+		
 		JLabel texteActions = new JLabel("Actions :");
 		texteActions.setMaximumSize(dimension);
 		this.add(texteActions);
@@ -49,6 +53,10 @@ public class PanneauBarreOutils extends JPanel {
 		boutonSelect.setName(ActionSelectionner.NOM_ACTION);
 		boutonChoixForme.add(boutonSelect);
 		this.add(boutonSelect);
+		
+		
+		
+		// BOUTON DE FORMES //
 		
 		JLabel texteFormes = new JLabel("Forme :");
 		texteFormes.setMaximumSize(dimension);
@@ -72,6 +80,10 @@ public class PanneauBarreOutils extends JPanel {
 		boutonChoixForme.add(boutonCercle);
 		this.add(boutonCercle);
 		
+		
+		
+		// BOUTONS DE REMPLISSAGE
+		
 		JLabel texteRemplissage = new JLabel("Remplissage :");
 		texteRemplissage.setMaximumSize(dimension);
 		this.add(texteRemplissage);
@@ -87,7 +99,11 @@ public class PanneauBarreOutils extends JPanel {
 		boutonChoixRemplissage.add(boutonUniforme);
 		this.add(boutonUniforme);
 		
-		JLabel texteCouleur = new JLabel("Remplissage :");
+		
+		
+		// BOUTON DE COULEUR //
+		
+		JLabel texteCouleur = new JLabel("Couleur :");
 		texteCouleur.setMaximumSize(dimension);
 		this.add(texteCouleur);
 		

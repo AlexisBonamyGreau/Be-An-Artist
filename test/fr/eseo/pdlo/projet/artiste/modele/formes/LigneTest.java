@@ -1,6 +1,8 @@
 package fr.eseo.pdlo.projet.artiste.modele.formes;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import java.util.Locale;
 
@@ -81,5 +83,32 @@ public class LigneTest {
 		Ligne l = new Ligne();
 		Coordonnees c = new Coordonnees(0, 10);
 		assertFalse(l.contient(c));
+	}
+	
+	
+	// TESTS VALIDATION FORME //
+	@Test
+	void testCadre() {
+		Ligne l = new Ligne();
+		assertEquals(l.getCadreMinX(), 0);
+		assertEquals(l.getCadreMinY(), 0);
+		assertEquals(l.getCadreMaxX(), 100);
+		assertEquals(l.getCadreMaxY(), 100);
+	}
+	
+	@Test
+	void testDeplacerVers() {
+		Ligne l = new Ligne();
+		l.deplacerVers(100, 0);
+		assertEquals(l.getC1().getAbscisse(), 100);
+		assertEquals(l.getC2().getAbscisse(), 200);
+	}
+	
+	@Test
+	void testDeplacerDe() {
+		Ligne l = new Ligne();
+		l.deplacerDe(100, 0);
+		assertEquals(l.getC1().getAbscisse(), 100);
+		assertEquals(l.getC2().getAbscisse(), 200);
 	}
 }

@@ -56,8 +56,8 @@ public class Ellipse extends Forme implements Remplissable {
 	// AUTRES METHODES //
 	public String toString() {
 		String perimetre;
-		String grand_rayon;
-		String petit_rayon;
+		String grandRayon;
+		String petitRayon;
 		String aire;
 		
     	Locale locale  = Locale.getDefault();
@@ -67,11 +67,12 @@ public class Ellipse extends Forme implements Remplissable {
     	decimalFormat.applyPattern(Coordonnees.PATTERN);
     	
     	perimetre = decimalFormat.format(perimetre());
-    	grand_rayon = decimalFormat.format(Math.max(getHauteur()/2, getLargeur()/2));
-    	petit_rayon = decimalFormat.format(Math.min(getHauteur()/2, getLargeur()/2));
+    	grandRayon = decimalFormat.format(Math.max(getHauteur()/2, getLargeur()/2));
+    	petitRayon = decimalFormat.format(Math.min(getHauteur()/2, getLargeur()/2));
     	aire = decimalFormat.format(aire());
 		
-    	String chaine = "[Ellipse "+remplissage.getMode()+"] : pos "+getPosition().toString()+" petit rayon "+petit_rayon+" grand rayon "+grand_rayon+" périmètre : "+perimetre+" aire : "+aire;
+    	String chaine = "[Ellipse "+remplissage.getMode()+"] : pos "+getPosition().toString()
+    			+" petit rayon "+petitRayon+" grand rayon "+grandRayon+" périmètre : "+perimetre+" aire : "+aire;
     	
     	if (locale == Locale.ENGLISH) {
     		chaine += " couleur = R"+getCouleur().getRed()+",G"+getCouleur().getGreen()+",B"+getCouleur().getBlue();
