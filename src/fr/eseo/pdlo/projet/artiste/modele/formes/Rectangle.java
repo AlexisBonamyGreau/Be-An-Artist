@@ -103,8 +103,8 @@ public class Rectangle extends Forme implements Remplissable {
 
 	@Override
 	public boolean contient(Coordonnees coordonnees) {
-		return (coordonnees.getAbscisse()<getPosition().getAbscisse() & coordonnees.getAbscisse()>getPosition().getAbscisse()
-				& coordonnees.getOrdonnee()<getPosition().getOrdonnee() & coordonnees.getOrdonnee()>getPosition().getOrdonnee());
+		return (coordonnees.getAbscisse()<getPosition().getAbscisse()+getLargeur() && coordonnees.getAbscisse()>getPosition().getAbscisse()
+				&& coordonnees.getOrdonnee()<getPosition().getOrdonnee()+getHauteur() && coordonnees.getOrdonnee()>getPosition().getOrdonnee());
 	}
 
 }

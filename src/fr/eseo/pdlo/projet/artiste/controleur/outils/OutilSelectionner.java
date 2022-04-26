@@ -14,12 +14,17 @@ public class OutilSelectionner extends Outil {
 	
 	@Override
 	public void mouseClicked(MouseEvent event) {
+		boolean detect = false;
 		for(VueForme vueForme : super.getPanneauDessin().getVueFormes()) {
 			if (vueForme.getForme().contient(getDebut())) {
 				formeSelectionnee = vueForme.getForme();
+				detect = true;
 			}
 		}
+		
+		if (detect) {
 		JOptionPane.showConfirmDialog(super.getPanneauDessin(), (Object) formeSelectionnee.toString()
 				, ActionSelectionner.NOM_ACTION, JOptionPane.INFORMATION_MESSAGE);
+		}
 	}
 }
