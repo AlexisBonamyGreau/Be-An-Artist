@@ -80,6 +80,18 @@ public class PanneauBarreOutils extends JPanel {
 		boutonChoixForme.add(boutonCercle);
 		this.add(boutonCercle);
 		
+		JToggleButton boutonRectangle = new JToggleButton(new ActionChoisirForme(panneauDessin, this, ActionChoisirForme.NOM_ACTION_RECTANGLE));
+		boutonRectangle.setMaximumSize(dimension);
+		boutonRectangle.setName(ActionChoisirForme.NOM_ACTION_RECTANGLE);
+		boutonChoixForme.add(boutonRectangle);
+		this.add(boutonRectangle);
+		
+		JToggleButton boutonCarre = new JToggleButton(new ActionChoisirForme(panneauDessin, this, ActionChoisirForme.NOM_ACTION_CARRE));
+		boutonCarre.setMaximumSize(dimension);
+		boutonCarre.setName(ActionChoisirForme.NOM_ACTION_CARRE);
+		boutonChoixForme.add(boutonCarre);
+		this.add(boutonCarre);
+		
 		
 		
 		// BOUTONS DE REMPLISSAGE
