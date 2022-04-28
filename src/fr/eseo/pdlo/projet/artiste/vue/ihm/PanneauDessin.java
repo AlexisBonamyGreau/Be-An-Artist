@@ -108,7 +108,7 @@ public class PanneauDessin extends JPanel {
 	}
 	
 	public void saveImage(String name,String type) {
-		BufferedImage image = new BufferedImage(LARGEUR_PAR_DEFAUT, HAUTEUR_PAR_DEFAUT, BufferedImage.TYPE_INT_RGB);
+		BufferedImage image = new BufferedImage(this.getWidth(), this.getHeight(), BufferedImage.TYPE_INT_RGB);
 		Graphics2D g2 = image.createGraphics();
 		paint(g2);
 		try{

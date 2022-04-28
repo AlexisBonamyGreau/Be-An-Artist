@@ -22,7 +22,7 @@ public class ActionExporter extends AbstractAction {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		this.panneauDessin.saveImage("test", "jpeg");
+		this.panneauDessin.saveImage("export", "jpeg");
 	}
 
 }
