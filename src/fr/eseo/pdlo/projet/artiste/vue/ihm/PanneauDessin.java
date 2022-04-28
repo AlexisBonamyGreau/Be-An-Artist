@@ -57,6 +57,10 @@ public class PanneauDessin extends JPanel {
 		this.vueFormes.add(vueForme);
 	}
 	
+	public void retirerVueForme(VueForme vueForme) {
+		this.vueFormes.remove(vueForme);
+	}
+	
 	public void associerOutil(Outil outil) {
         if (outil != null)
         {

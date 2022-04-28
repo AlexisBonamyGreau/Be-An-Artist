@@ -7,6 +7,9 @@ import fr.eseo.pdlo.projet.artiste.modele.formes.Forme;
 import fr.eseo.pdlo.projet.artiste.vue.formes.VueForme;
 
 public abstract class OutilForme extends Outil {
+	// VARIABLE //
+	private VueForme vueForme;
+	
 	// METHODES //
 	@Override
 	public void mouseClicked(MouseEvent event) {
@@ -31,9 +34,19 @@ public abstract class OutilForme extends Outil {
 	}
 	
     @Override
-    public void mousePressed(MouseEvent e)
+    public void mousePressed(MouseEvent event)
     {
-        super.mousePressed(e);
+        super.mousePressed(event);
+    }
+    
+    @Override
+    public void mouseDragged(MouseEvent event)
+    {
+    	setFin(new Coordonnees(event.getX(), event.getY()));
+    	getPanneauDessin().retirerVueForme(vueForme);;
+    	this.vueForme = creerVueForme();
+    	getPanneauDessin().ajouterVueForme(this.vueForme);
+		getPanneauDessin().repaint();
     }
 	
 	
