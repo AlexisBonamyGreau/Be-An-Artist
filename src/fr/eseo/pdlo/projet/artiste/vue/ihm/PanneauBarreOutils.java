@@ -15,6 +15,7 @@ import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionChoisirModeRemplissa
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionEffacer;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionExporter;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionSelectionner;
+import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionSupprimer;
 import fr.eseo.pdlo.projet.artiste.modele.Remplissage;
 
 public class PanneauBarreOutils extends JPanel {
@@ -37,7 +38,6 @@ public class PanneauBarreOutils extends JPanel {
 		ButtonGroup boutonChoixRemplissage = new ButtonGroup();
 		
 		
-		
 		// BOUTONS D'ACTION //
 		
 		JLabel texteActions = new JLabel("Actions :");
@@ -48,6 +48,12 @@ public class PanneauBarreOutils extends JPanel {
 		boutonEffacer.setMaximumSize(dimension);
 		boutonEffacer.setName(ActionEffacer.NOM_ACTION);
 		this.add(boutonEffacer);
+		
+		JToggleButton boutonSupprimer = new JToggleButton(new ActionSupprimer(this.panneauDessin));
+		boutonSupprimer.setMaximumSize(dimension);
+		boutonSupprimer.setName(ActionSupprimer.NOM_ACTION);
+		boutonChoixForme.add(boutonSupprimer);
+		this.add(boutonSupprimer);
 		
 		JToggleButton boutonSelect = new JToggleButton(new ActionSelectionner(panneauDessin));
 		boutonSelect.setMaximumSize(dimension);
