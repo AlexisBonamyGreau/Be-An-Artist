@@ -12,6 +12,7 @@ import javax.swing.JToggleButton;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionChoisirCouleur;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionChoisirForme;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionChoisirModeRemplissage;
+import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionDeplacer;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionEffacer;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionExporter;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionSelectionner;
@@ -60,6 +61,12 @@ public class PanneauBarreOutils extends JPanel {
 		boutonSelect.setName(ActionSelectionner.NOM_ACTION);
 		boutonChoixForme.add(boutonSelect);
 		this.add(boutonSelect);
+		
+		JToggleButton boutonMove = new JToggleButton(new ActionDeplacer(panneauDessin));
+		boutonMove.setMaximumSize(dimension);
+		boutonMove.setName(ActionDeplacer.NOM_ACTION);
+		boutonChoixForme.add(boutonMove);
+		this.add(boutonMove);
 		
 		JButton boutonExport = new JButton(new ActionExporter(panneauDessin));
 		boutonExport.setMaximumSize(dimension);
