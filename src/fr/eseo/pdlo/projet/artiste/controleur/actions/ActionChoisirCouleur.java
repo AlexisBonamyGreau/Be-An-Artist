@@ -27,8 +27,9 @@ public class ActionChoisirCouleur extends AbstractAction {
 	public void actionPerformed(ActionEvent e) {
 		Color couleur = JColorChooser.showDialog(this.panneauDessin, NOM_ACTION, this.panneauDessin.getCouleurCourante());
 		
-		if (couleur != null)
+		if (couleur != null) {
 			this.panneauDessin.setCouleurCourante(couleur);
+		}
 	}
 
 }

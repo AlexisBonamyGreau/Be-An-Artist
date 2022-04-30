@@ -1,5 +1,6 @@
 package fr.eseo.pdlo.projet.artiste.vue.ihm;
 
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
@@ -18,6 +19,8 @@ public class PanneauBarreEtat extends JPanel implements MouseMotionListener {
 	// CONSTRUCTEUR //
 	public PanneauBarreEtat(PanneauDessin panneauDessin) {
 		this.panneauDessin = panneauDessin;
+		
+		this.setBackground(Color.GRAY);
 		
 		this.valeurX = new JLabel("x: "+0);
 		this.valeurY = new JLabel("y: "+0);
