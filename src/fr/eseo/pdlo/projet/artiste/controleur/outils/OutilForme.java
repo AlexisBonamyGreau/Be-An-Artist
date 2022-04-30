@@ -29,6 +29,7 @@ public abstract class OutilForme extends Outil {
 		setFin(new Coordonnees(event.getX(), event.getY()));
 		if (getDebut().getAbscisse() != getFin().getAbscisse() || getDebut().getOrdonnee() != getFin().getOrdonnee()) {
 			getPanneauDessin().ajouterVueForme(creerVueForme());
+			getPanneauDessin().retirerVueForme(vueForme);;
 			getPanneauDessin().repaint();
 		}
 	}

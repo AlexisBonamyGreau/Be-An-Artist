@@ -3,6 +3,7 @@ package fr.eseo.pdlo.projet.artiste.controleur.actions;
 import java.awt.event.ActionEvent;
 
 import javax.swing.AbstractAction;
+import javax.swing.JFileChooser;
 
 import fr.eseo.pdlo.projet.artiste.vue.ihm.PanneauDessin;
 
@@ -22,7 +23,15 @@ public class ActionExporter extends AbstractAction {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		this.panneauDessin.saveImage("export", "jpeg");
+	    JFileChooser chooser = new JFileChooser(); 
+	    chooser.setCurrentDirectory(new java.io.File("."));
+	    chooser.setDialogTitle("choix");
+	    chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+	    chooser.setAcceptAllFileFilterUsed(false);
+	    
+	    if (chooser.showOpenDialog(panneauDessin) == JFileChooser.APPROVE_OPTION) { 
+	    	this.panneauDessin.saveImage(chooser.getSelectedFile()+"/export", "jpeg");
+	    }
 	}
 
 }
