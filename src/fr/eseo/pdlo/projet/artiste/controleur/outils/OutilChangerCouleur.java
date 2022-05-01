@@ -23,7 +23,7 @@ public class OutilChangerCouleur extends Outil {
 		}
 		
 		if (detect) {
-			Color couleur = JColorChooser.showDialog(super.getPanneauDessin(), "Modifier couleur", super.getPanneauDessin().getCouleurCourante());
+			Color couleur = JColorChooser.showDialog(super.getPanneauDessin(), "Modifier couleur", super.getPanneauDessin().getCouleurRemplissage());
 			if (couleur != null)
 				formeSelectionnee.setCouleur(couleur);
 			super.getPanneauDessin().repaint();

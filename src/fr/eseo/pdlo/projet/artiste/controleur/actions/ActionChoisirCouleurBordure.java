@@ -8,9 +8,9 @@ import javax.swing.JColorChooser;
 
 import fr.eseo.pdlo.projet.artiste.vue.ihm.PanneauDessin;
 
-public class ActionChoisirCouleur extends AbstractAction {
+public class ActionChoisirCouleurBordure extends AbstractAction {
 	// CONSTANTE DE CLASSE //
-	public static final String NOM_ACTION = "Couleur Remplissage";
+	public static final String NOM_ACTION = "Couleur Bordure";
 	
 	
 	// VARIABLE D'INSTANCE //
@@ -18,17 +18,17 @@ public class ActionChoisirCouleur extends AbstractAction {
 	
 	
 	// CONSTRUCTEUR //
-	public ActionChoisirCouleur(PanneauDessin panneauDessin) {
+	public ActionChoisirCouleurBordure(PanneauDessin panneauDessin) {
 		super(NOM_ACTION);
 		this.panneauDessin = panneauDessin;
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		Color couleur = JColorChooser.showDialog(this.panneauDessin, NOM_ACTION, this.panneauDessin.getCouleurRemplissage());
+		Color couleur = JColorChooser.showDialog(this.panneauDessin, NOM_ACTION, this.panneauDessin.getCouleurBordure());
 		
 		if (couleur != null) {
-			this.panneauDessin.setCouleurRemplissage(couleur);
+			this.panneauDessin.setCouleurBordure(couleur);
 		}
 	}
 

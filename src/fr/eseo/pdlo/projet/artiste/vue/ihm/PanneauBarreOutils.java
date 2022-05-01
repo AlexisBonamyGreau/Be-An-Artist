@@ -12,6 +12,7 @@ import javax.swing.JToggleButton;
 
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionChangerCouleur;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionChoisirCouleur;
+import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionChoisirCouleurBordure;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionChoisirForme;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionChoisirModeRemplissage;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionDeplacer;
@@ -121,6 +122,12 @@ public class PanneauBarreOutils extends JPanel {
 		boutonCouleur.setName(ActionChoisirCouleur.NOM_ACTION);
 		boutonCouleur.setBackground(Color.LIGHT_GRAY);
 		this.add(boutonCouleur);
+		
+		JButton boutonCouleurBordure = new JButton(new ActionChoisirCouleurBordure(panneauDessin));
+		boutonCouleurBordure.setMaximumSize(dimension);
+		boutonCouleurBordure.setName(ActionChoisirCouleur.NOM_ACTION);
+		boutonCouleurBordure.setBackground(Color.LIGHT_GRAY);
+		this.add(boutonCouleurBordure);
 		
 		JToggleButton boutonChangeColor = new JToggleButton(new ActionChangerCouleur(panneauDessin));
 		drawButton(boutonChangeColor, ActionChangerCouleur.NOM_ACTION, boutonChoixForme);

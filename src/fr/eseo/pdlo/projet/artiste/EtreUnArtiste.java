@@ -12,25 +12,7 @@ import fr.eseo.pdlo.projet.artiste.vue.ihm.PanneauDessin;
 
 public class EtreUnArtiste {
 	public void ConstructeurParDefaut() {
-		JFrame fenetre = new JFrame("Etre Un Artiste");
-		
-		PanneauDessin panneauDessin = new PanneauDessin();
-		OutilLigne outilLigne = new OutilLigne();
-		panneauDessin.associerOutil(outilLigne);
-		
-		PanneauBarreOutils panneauBarreOutils = new PanneauBarreOutils(panneauDessin);
-		fenetre.add(panneauBarreOutils, BorderLayout.EAST);
-		
-		PanneauBarreEtat panneauBarreEtat = new PanneauBarreEtat(panneauDessin);
-		fenetre.add(panneauBarreEtat, BorderLayout.SOUTH);
-		
-		fenetre.add(panneauDessin);
-		
-		fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		fenetre.setSize(PanneauDessin.LARGEUR_PAR_DEFAUT, PanneauDessin.HAUTEUR_PAR_DEFAUT);
-		fenetre.setResizable(false);
-		fenetre.setLocationRelativeTo(null);
-		fenetre.setVisible(true);
+		ConstructeurCustom("Etre Un Artiste", String.valueOf(PanneauDessin.LARGEUR_PAR_DEFAUT), String.valueOf(PanneauDessin.HAUTEUR_PAR_DEFAUT));
 	}
 	
 	

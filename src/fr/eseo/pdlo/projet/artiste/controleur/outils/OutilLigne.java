@@ -10,7 +10,7 @@ public class OutilLigne extends OutilForme {
 	protected VueForme creerVueForme() {
 		Ligne ligne = new Ligne(getDebut());
 		ligne.setC2(getFin());
-		ligne.setCouleur(super.getPanneauDessin().getCouleurCourante());
+		ligne.setCouleur(super.getPanneauDessin().getCouleurRemplissage());
 		return  new VueLigne(ligne);
 	}
 

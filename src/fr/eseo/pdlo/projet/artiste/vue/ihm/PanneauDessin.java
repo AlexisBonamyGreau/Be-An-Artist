@@ -21,7 +21,8 @@ public class PanneauDessin extends JPanel {
 	// VARIABLES D'INSTANCE //
 	private final List<VueForme> vueFormes = new ArrayList<VueForme>();
 	private Outil outilCourant;
-	private Color couleurCourante;
+	private Color couleurRemplissage;
+	private Color couleurBordure;
 	private Remplissage remplissageCourant;
 	
 	// CONSTANTES DE CLASSE //
@@ -37,7 +38,7 @@ public class PanneauDessin extends JPanel {
 	public PanneauDessin(int largeur, int hauteur, Color fond) {
 		this.setPreferredSize(new Dimension(largeur, hauteur));
 		this.setBackground(fond);
-		this.setCouleurCourante(Forme.COULEUR_PAR_DEFAUT);
+		this.setCouleurRemplissage(Forme.COULEUR_PAR_DEFAUT);
 		this.setModeRemplissageCourant(Remplissage.AUCUNE);
 	}
 	
@@ -86,13 +87,21 @@ public class PanneauDessin extends JPanel {
 		this.outilCourant = outilCourant;
 	}
     
-    public Color getCouleurCourante() {
-    	return this.couleurCourante;
+    public Color getCouleurRemplissage() {
+    	return this.couleurRemplissage;
     }
     
-    public void setCouleurCourante(Color couleur) {
-    	this.couleurCourante = couleur;
+    public void setCouleurRemplissage(Color couleur) {
+    	this.couleurRemplissage = couleur;
     }
+    
+    public Color getCouleurBordure() {
+		return couleurBordure;
+	}
+    
+    public void setCouleurBordure(Color couleurBordure) {
+		this.couleurBordure = couleurBordure;
+	}
     
     public Remplissage getModeRemplissageCourant() {
     	return remplissageCourant;
