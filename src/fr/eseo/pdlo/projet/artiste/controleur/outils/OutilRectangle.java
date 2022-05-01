@@ -12,7 +12,7 @@ public class OutilRectangle extends OutilForme {
 	protected VueForme creerVueForme() {
 		calculeCoordonnees();
 		Rectangle rectangle = new Rectangle(c1, c2.getAbscisse()-c1.getAbscisse(), c2.getOrdonnee()-c1.getOrdonnee());
-		rectangle.setCouleur(super.getPanneauDessin().getCouleurRemplissage());
+		rectangle.setCouleur(super.getPanneauDessin().getCouleurCourante());
 		rectangle.setCouleurBordure(super.getPanneauDessin().getCouleurBordure());
 		rectangle.setRemplissage(super.getPanneauDessin().getModeRemplissageCourant());
 		return new VueRectangle(rectangle);

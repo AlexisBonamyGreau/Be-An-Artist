@@ -26,7 +26,7 @@ public class VueEllipse extends VueForme {
 					(int) Math.round(ellipse.getHauteur()));
 		}
 		
-		if (ellipse.getRemplissage() == Remplissage.AUCUNE || ellipse.getRemplissage() == Remplissage.BICOLORE) {
+		if (ellipse.getRemplissage() == Remplissage.BICOLORE) {
 			g2d.setColor(ellipse.getCouleurBordure());
 		}
 		

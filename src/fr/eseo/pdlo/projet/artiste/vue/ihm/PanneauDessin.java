@@ -38,7 +38,7 @@ public class PanneauDessin extends JPanel {
 	public PanneauDessin(int largeur, int hauteur, Color fond) {
 		this.setPreferredSize(new Dimension(largeur, hauteur));
 		this.setBackground(fond);
-		this.setCouleurRemplissage(Forme.COULEUR_PAR_DEFAUT);
+		this.setCouleurCourante(Forme.COULEUR_PAR_DEFAUT);
 		this.setModeRemplissageCourant(Remplissage.AUCUNE);
 	}
 	
@@ -87,11 +87,11 @@ public class PanneauDessin extends JPanel {
 		this.outilCourant = outilCourant;
 	}
     
-    public Color getCouleurRemplissage() {
+    public Color getCouleurCourante() {
     	return this.couleurRemplissage;
     }
     
-    public void setCouleurRemplissage(Color couleur) {
+    public void setCouleurCourante(Color couleur) {
     	this.couleurRemplissage = couleur;
     }
     

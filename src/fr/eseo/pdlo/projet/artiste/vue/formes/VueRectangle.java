@@ -28,7 +28,7 @@ public class VueRectangle extends VueForme {
 					, (int) Math.round(rectangle.getHauteur()));
 		}
 		
-		if (rectangle.getRemplissage() == Remplissage.AUCUNE || rectangle.getRemplissage() == Remplissage.BICOLORE) {
+		if (rectangle.getRemplissage() == Remplissage.BICOLORE) {
 			g2d.setColor(rectangle.getCouleurBordure());
 		}
 		

@@ -27,7 +27,7 @@ public class OutilCercle extends OutilForme {
 			ordonnee = getDebut().getOrdonnee() - diametre;
 		
 		Cercle cercle = new Cercle(new Coordonnees(abscisse, ordonnee), diametre);
-		cercle.setCouleur(super.getPanneauDessin().getCouleurRemplissage());
+		cercle.setCouleur(super.getPanneauDessin().getCouleurCourante());
 		cercle.setCouleurBordure(super.getPanneauDessin().getCouleurBordure());
 		cercle.setRemplissage(super.getPanneauDessin().getModeRemplissageCourant());
 		

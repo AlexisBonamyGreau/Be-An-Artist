@@ -25,10 +25,10 @@ public class ActionChoisirCouleur extends AbstractAction {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		Color couleur = JColorChooser.showDialog(this.panneauDessin, NOM_ACTION, this.panneauDessin.getCouleurRemplissage());
+		Color couleur = JColorChooser.showDialog(this.panneauDessin, NOM_ACTION, this.panneauDessin.getCouleurCourante());
 		
 		if (couleur != null) {
-			this.panneauDessin.setCouleurRemplissage(couleur);
+			this.panneauDessin.setCouleurCourante(couleur);
 		}
 	}
 

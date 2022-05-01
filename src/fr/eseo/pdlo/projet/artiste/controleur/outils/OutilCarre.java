@@ -27,7 +27,7 @@ public class OutilCarre extends OutilForme {
 			ordonnee = getDebut().getOrdonnee() - diametre;
 		
 		Carre carre = new Carre(new Coordonnees(abscisse, ordonnee), diametre);
-		carre.setCouleur(super.getPanneauDessin().getCouleurRemplissage());
+		carre.setCouleur(super.getPanneauDessin().getCouleurCourante());
 		carre.setCouleurBordure(super.getPanneauDessin().getCouleurBordure());
 		carre.setRemplissage(super.getPanneauDessin().getModeRemplissageCourant());
 		
