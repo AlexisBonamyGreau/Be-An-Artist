@@ -2,6 +2,7 @@ package fr.eseo.pdlo.projet.artiste.vue.formes;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 
 import fr.eseo.pdlo.projet.artiste.modele.Remplissage;
 import fr.eseo.pdlo.projet.artiste.modele.formes.Rectangle;
@@ -19,6 +20,9 @@ public class VueRectangle extends VueForme {
 
 	@Override
 	public void affiche(Graphics2D g2d) {
+		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+	            RenderingHints.VALUE_ANTIALIAS_ON); 
+		
 		Rectangle rectangle = (Rectangle) this.forme;
 		g2d.setColor(rectangle.getCouleur());
 		

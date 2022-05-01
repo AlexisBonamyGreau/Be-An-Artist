@@ -2,6 +2,7 @@ package fr.eseo.pdlo.projet.artiste.vue.formes;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 
 import fr.eseo.pdlo.projet.artiste.modele.formes.Ligne;
 
@@ -16,6 +17,9 @@ public class VueLigne extends VueForme {
 
 	@Override
 	public void affiche(Graphics2D g2d) {
+		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+	            RenderingHints.VALUE_ANTIALIAS_ON); 
+		
 		Ligne ligne = (Ligne) this.forme;
 		g2d.setColor(ligne.getCouleur());
 		g2d.drawLine((int) Math.round(ligne.getC1().getAbscisse()), (int) Math.round(ligne.getC1().getOrdonnee()),
