@@ -18,7 +18,8 @@ public abstract class Forme implements Coloriable {
 	private double largeur;
 	private double hauteur;
 	private Coordonnees position;
-	private Color couleur;
+	private Color couleurRemplissage;
+	private Color couleurBordure;
 	
 	
 	// CONSTRUCTEURS //
@@ -35,6 +36,7 @@ public abstract class Forme implements Coloriable {
 		setLargeur(largeur);
 		setHauteur(hauteur);
 		setCouleur(COULEUR_PAR_DEFAUT);
+		setCouleurBordure(COULEUR_PAR_DEFAUT);
 	}
 	
 	public Forme(Coordonnees position) {
@@ -53,6 +55,10 @@ public abstract class Forme implements Coloriable {
 	
 	public double getHauteur() {
 		return hauteur;
+	}
+	
+	public Color getCouleurBordure() {
+		return couleurBordure;
 	}
 	
 	public double getCadreMinX() {
@@ -85,6 +91,10 @@ public abstract class Forme implements Coloriable {
 		this.hauteur = hauteur;
 	}
 	
+	public void setCouleurBordure(Color couleurBordure) {
+		this.couleurBordure = couleurBordure;
+	}
+	
 	
 	// AUTRES METHODES //
 	public void deplacerVers(double nouvX, double nouvY) {
@@ -99,12 +109,12 @@ public abstract class Forme implements Coloriable {
 	// METHODES D'INTERFACE //
 	@Override
 	public Color getCouleur() {
-		return this.couleur;
+		return this.couleurRemplissage;
 	}
 	
 	@Override
 	public void setCouleur(Color couleur) {
-		this.couleur = couleur;
+		this.couleurRemplissage = couleur;
 	}
 	
 	

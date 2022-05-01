@@ -109,6 +109,9 @@ public class PanneauBarreOutils extends JPanel {
 		JToggleButton boutonUniforme = new JToggleButton(new ActionChoisirModeRemplissage(panneauDessin, Remplissage.UNIFORME));
 		drawButton(boutonUniforme, null, boutonChoixRemplissage);
 		
+		JToggleButton boutonBicolore = new JToggleButton(new ActionChoisirModeRemplissage(panneauDessin, Remplissage.BICOLORE));
+		drawButton(boutonBicolore, null, boutonChoixRemplissage);
+		
 		
 		
 		// BOUTON DE COULEUR //

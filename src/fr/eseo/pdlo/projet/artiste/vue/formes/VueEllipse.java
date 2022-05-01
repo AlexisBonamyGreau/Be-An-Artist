@@ -8,7 +8,7 @@ import fr.eseo.pdlo.projet.artiste.modele.formes.Ellipse;
 
 public class VueEllipse extends VueForme {
 	// VARIABLE DE CLASSE //
-	Color couleurCourante;
+	Color couleurRemplissage;
 	Remplissage modeRemplissageCourant;
 
 	public VueEllipse(Ellipse ellipse) {
@@ -20,17 +20,21 @@ public class VueEllipse extends VueForme {
 		Ellipse ellipse = (Ellipse) this.forme;
 		g2d.setColor(ellipse.getCouleur());
 		
-		if (ellipse.getRemplissage() == Remplissage.UNIFORME) {
+		if (ellipse.getRemplissage() == Remplissage.UNIFORME || ellipse.getRemplissage() == Remplissage.BICOLORE) {
 			g2d.fillOval((int) Math.round(ellipse.getPosition().getAbscisse()), (int) Math.round(ellipse.getPosition().getOrdonnee()),
 					(int) Math.round(ellipse.getLargeur()), 
 					(int) Math.round(ellipse.getHauteur()));
+		}
+		
+		if (ellipse.getRemplissage() == Remplissage.AUCUNE || ellipse.getRemplissage() == Remplissage.BICOLORE) {
+			g2d.setColor(ellipse.getCouleurBordure());
 		}
 		
 		g2d.drawOval((int) Math.round(ellipse.getPosition().getAbscisse()), (int) Math.round(ellipse.getPosition().getOrdonnee()),
 				(int) Math.round(ellipse.getLargeur()), 
 				(int) Math.round(ellipse.getHauteur()));
 		
-		this.couleurCourante = ellipse.getCouleur();
+		this.couleurRemplissage = ellipse.getCouleur();
 		this.modeRemplissageCourant = ellipse.getRemplissage();
 	}
 

@@ -29,6 +29,10 @@ public class ActionChoisirModeRemplissage extends AbstractAction {
 			panneauDessin.setModeRemplissageCourant(Remplissage.UNIFORME);
 			break;
 			
+		case "Bicolore" :
+			panneauDessin.setModeRemplissageCourant(Remplissage.BICOLORE);
+			break;
+			
 		default :
 			break;
 		}
