@@ -22,10 +22,14 @@ public class VueRectangle extends VueForme {
 		Rectangle rectangle = (Rectangle) this.forme;
 		g2d.setColor(rectangle.getCouleur());
 		
-		if (rectangle.getRemplissage() == Remplissage.UNIFORME) {
+		if (rectangle.getRemplissage() == Remplissage.UNIFORME || rectangle.getRemplissage() == Remplissage.BICOLORE) {
 			g2d.fillRect((int) Math.round(rectangle.getPosition().getAbscisse()), (int) Math.round(rectangle.getPosition().getOrdonnee())
 					, (int) Math.round(rectangle.getLargeur())
 					, (int) Math.round(rectangle.getHauteur()));
+		}
+		
+		if (rectangle.getRemplissage() == Remplissage.AUCUNE || rectangle.getRemplissage() == Remplissage.BICOLORE) {
+			g2d.setColor(rectangle.getCouleurBordure());
 		}
 		
 		g2d.drawRect((int) Math.round(rectangle.getPosition().getAbscisse()), (int) Math.round(rectangle.getPosition().getOrdonnee())
