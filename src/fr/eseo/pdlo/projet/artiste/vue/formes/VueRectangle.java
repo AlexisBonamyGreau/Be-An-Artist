@@ -11,6 +11,7 @@ public class VueRectangle extends VueForme {
 	// VARIABLES DE CLASSE //
 	Color couleurCourante;
 	Remplissage modeRemplissageCourant;
+	boolean crenelage;
 	
 
 	public VueRectangle(Rectangle rectangle) {
@@ -19,11 +20,13 @@ public class VueRectangle extends VueForme {
 
 
 	@Override
-	public void affiche(Graphics2D g2d) {
-		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-	            RenderingHints.VALUE_ANTIALIAS_ON); 
-		
+	public void affiche(Graphics2D g2d) {		
 		Rectangle rectangle = (Rectangle) this.forme;
+		if (rectangle.getCrenelage()) {
+		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+	            RenderingHints.VALUE_ANTIALIAS_ON);
+		}
+		
 		g2d.setColor(rectangle.getCouleur());
 		
 		if (rectangle.getRemplissage() == Remplissage.UNIFORME || rectangle.getRemplissage() == Remplissage.BICOLORE) {
@@ -42,5 +45,6 @@ public class VueRectangle extends VueForme {
 		
 		this.couleurCourante = rectangle.getCouleur();
 		this.modeRemplissageCourant = rectangle.getRemplissage();
+		this.crenelage = rectangle.getCrenelage();
 	}
 }

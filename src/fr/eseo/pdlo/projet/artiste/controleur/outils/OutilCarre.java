@@ -30,6 +30,7 @@ public class OutilCarre extends OutilForme {
 		carre.setCouleur(super.getPanneauDessin().getCouleurCourante());
 		carre.setCouleurBordure(super.getPanneauDessin().getCouleurBordure());
 		carre.setRemplissage(super.getPanneauDessin().getModeRemplissageCourant());
+		carre.setCrenelage(super.getPanneauDessin().getCrenelage());
 		
 		return new VueCarre(carre);
 	}

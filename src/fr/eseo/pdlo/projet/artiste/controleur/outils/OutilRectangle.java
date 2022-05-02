@@ -15,6 +15,7 @@ public class OutilRectangle extends OutilForme {
 		rectangle.setCouleur(super.getPanneauDessin().getCouleurCourante());
 		rectangle.setCouleurBordure(super.getPanneauDessin().getCouleurBordure());
 		rectangle.setRemplissage(super.getPanneauDessin().getModeRemplissageCourant());
+		rectangle.setCrenelage(super.getPanneauDessin().getCrenelage());
 		return new VueRectangle(rectangle);
 	}
 

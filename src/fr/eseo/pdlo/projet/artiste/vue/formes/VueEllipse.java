@@ -11,6 +11,7 @@ public class VueEllipse extends VueForme {
 	// VARIABLE DE CLASSE //
 	Color couleurRemplissage;
 	Remplissage modeRemplissageCourant;
+	boolean crenelage;
 
 	public VueEllipse(Ellipse ellipse) {
 		super(ellipse);
@@ -18,11 +19,13 @@ public class VueEllipse extends VueForme {
 
 	@Override
 	public void affiche(Graphics2D g2d) {
-		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-	            RenderingHints.VALUE_ANTIALIAS_ON); 
-		
 		Ellipse ellipse = (Ellipse) this.forme;
 		g2d.setColor(ellipse.getCouleur());
+		
+		if (ellipse.getCrenelage()) {
+		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+	            RenderingHints.VALUE_ANTIALIAS_ON);
+		}
 		
 		if (ellipse.getRemplissage() == Remplissage.UNIFORME || ellipse.getRemplissage() == Remplissage.BICOLORE) {
 			g2d.fillOval((int) Math.round(ellipse.getPosition().getAbscisse()), (int) Math.round(ellipse.getPosition().getOrdonnee()),
@@ -40,6 +43,7 @@ public class VueEllipse extends VueForme {
 		
 		this.couleurRemplissage = ellipse.getCouleur();
 		this.modeRemplissageCourant = ellipse.getRemplissage();
+		this.crenelage = ellipse.getCrenelage();
 	}
 
 }

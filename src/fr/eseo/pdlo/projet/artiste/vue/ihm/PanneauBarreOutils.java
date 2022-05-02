@@ -15,6 +15,7 @@ import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionChoisirCouleur;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionChoisirCouleurBordure;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionChoisirForme;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionChoisirModeRemplissage;
+import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionCrenelage;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionDeplacer;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionEffacer;
 import fr.eseo.pdlo.projet.artiste.controleur.actions.ActionExporter;
@@ -70,6 +71,18 @@ public class PanneauBarreOutils extends JPanel {
 		boutonExport.setBackground(Color.LIGHT_GRAY);
 		boutonChoixForme.add(boutonExport);
 		this.add(boutonExport);
+		
+		JToggleButton boutonCrenelage = new JToggleButton(new ActionCrenelage(panneauDessin));
+		boutonCrenelage.setMaximumSize(dimension);
+		boutonCrenelage.setName(ActionCrenelage.NOM_ACTION);
+		boutonCrenelage.setBackground(Color.LIGHT_GRAY);
+		this.add(boutonCrenelage);
+		
+//		JButton boutonCrenelage = new JButton(new ActionCrenelage(panneauDessin));
+//		boutonCrenelage.setMaximumSize(dimension);
+//		boutonCrenelage.setName(ActionCrenelage.NOM_ACTION);
+//		boutonCrenelage.setBackground(Color.LIGHT_GRAY);
+//		this.add(boutonCrenelage);
 		
 		
 		

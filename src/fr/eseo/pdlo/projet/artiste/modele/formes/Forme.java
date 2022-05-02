@@ -20,6 +20,7 @@ public abstract class Forme implements Coloriable {
 	private Coordonnees position;
 	private Color couleurRemplissage;
 	private Color couleurBordure;
+	private boolean crenelage;
 	
 	
 	// CONSTRUCTEURS //
@@ -61,6 +62,10 @@ public abstract class Forme implements Coloriable {
 		return couleurBordure;
 	}
 	
+	public boolean getCrenelage() {
+		return crenelage;
+	}
+	
 	public double getCadreMinX() {
 		return Math.min(getPosition().getAbscisse(), getPosition().getAbscisse()+getLargeur());
 	}
@@ -93,6 +98,10 @@ public abstract class Forme implements Coloriable {
 	
 	public void setCouleurBordure(Color couleurBordure) {
 		this.couleurBordure = couleurBordure;
+	}
+
+	public void setCrenelage(boolean crenelage) {
+		this.crenelage = crenelage;
 	}
 	
 	

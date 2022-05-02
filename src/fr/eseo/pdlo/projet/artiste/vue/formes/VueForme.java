@@ -5,7 +5,7 @@ import java.awt.Graphics2D;
 import fr.eseo.pdlo.projet.artiste.modele.formes.Forme;
 
 public abstract class VueForme {
-	// VARIABLES D'INSTANCE //
+	// VARIABLE D'INSTANCE //
 	protected final Forme forme;
 	
 	// CONSTRUCTEUR //

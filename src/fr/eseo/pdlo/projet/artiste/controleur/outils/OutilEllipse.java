@@ -15,6 +15,7 @@ public class OutilEllipse extends OutilForme {
 		ellipse.setCouleur(super.getPanneauDessin().getCouleurCourante());
 		ellipse.setCouleurBordure(super.getPanneauDessin().getCouleurBordure());
 		ellipse.setRemplissage(super.getPanneauDessin().getModeRemplissageCourant());
+		ellipse.setCrenelage(super.getPanneauDessin().getCrenelage());
 		return new VueEllipse(ellipse);
 	}
 

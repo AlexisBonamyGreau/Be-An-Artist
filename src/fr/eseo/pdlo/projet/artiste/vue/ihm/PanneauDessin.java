@@ -24,6 +24,7 @@ public class PanneauDessin extends JPanel {
 	private Color couleurRemplissage;
 	private Color couleurBordure;
 	private Remplissage remplissageCourant;
+	private boolean crenelage;
 	
 	// CONSTANTES DE CLASSE //
 	public static final int LARGEUR_PAR_DEFAUT = 1080;
@@ -40,6 +41,7 @@ public class PanneauDessin extends JPanel {
 		this.setBackground(fond);
 		this.setCouleurCourante(Forme.COULEUR_PAR_DEFAUT);
 		this.setModeRemplissageCourant(Remplissage.AUCUNE);
+		this.setCrenelage(false);
 	}
 	
 	
@@ -110,6 +112,14 @@ public class PanneauDessin extends JPanel {
     public void setModeRemplissageCourant(Remplissage remplissage) {
     	this.remplissageCourant = remplissage;
     }
+    
+    public boolean getCrenelage() {
+    	return this.crenelage;
+    }
+    
+    public void setCrenelage(boolean crenelage) {
+		this.crenelage = crenelage;
+	}
 	
 	@Override
 	protected void paintComponent(Graphics g) {

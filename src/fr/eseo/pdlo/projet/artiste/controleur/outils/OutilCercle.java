@@ -30,6 +30,7 @@ public class OutilCercle extends OutilForme {
 		cercle.setCouleur(super.getPanneauDessin().getCouleurCourante());
 		cercle.setCouleurBordure(super.getPanneauDessin().getCouleurBordure());
 		cercle.setRemplissage(super.getPanneauDessin().getModeRemplissageCourant());
+		cercle.setCrenelage(super.getPanneauDessin().getCrenelage());
 		
 		return new VueCercle(cercle);
 	}
